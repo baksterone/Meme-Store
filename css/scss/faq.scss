@@ -1,0 +1,33 @@
+.faq-content{
+    height: 100vh;
+}
+
+.order, .delivery, .memes{
+    display: flex;
+    border: 1px solid #fff;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    h3{
+        color: red;
+    }
+
+    i{
+        margin-right: 10px;
+    }
+}
+
+.order-answer, .delivery-answer, .memes-answer{
+    
+    width: 70%;
+}
+
+.faq{
+    
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-top: 100px;
+}

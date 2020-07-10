@@ -1,0 +1,39 @@
+.info{
+    
+    
+
+    & .phone{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & h3{
+            margin-left: 20px;
+            
+        }
+    }
+
+    & .mail{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        & h3{
+            margin-left: 20px;
+            
+        }
+    }
+
+    & .map{
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        
+        & iframe{
+            margin-left: 20px;
+            margin-bottom: 90px;
+        }
+        
+    }
+}

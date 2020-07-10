@@ -1,0 +1,60 @@
+.login-button{
+    
+    & .container-counter{
+        position: absolute;
+        right: 20%;
+        top: 1%;
+    }
+}
+
+.container-products{
+    display: flex;
+    flex-wrap: wrap;
+
+        .item{
+            height: 300px;
+            border: 1px solid #000;
+            width: 250px;
+            text-align: center;
+            margin: 10px;
+
+            .img{
+                background-image: url(../img/item1.jpg);
+                height: 200px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50%;
+            }
+
+            .name{
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            & button{
+                border: 1px solid $primary_color;
+                padding: 5px;
+                background-color: #fff;
+                margin-top: 5px;
+                font-size: 15px;
+                font-weight: 700;
+    
+                &:hover{
+                    border: 3px solid $secondary_color;
+                }
+            }
+
+            .closeItem{
+                display: none;
+            }
+        }
+
+        .filter{
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            
+        }
+}
+
+

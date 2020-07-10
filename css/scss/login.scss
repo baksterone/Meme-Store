@@ -1,0 +1,56 @@
+$primary_color: #000;
+$secondary_color: yellow;
+
+.login-content{
+    height: 100vh;
+}
+
+.crumb{
+    display: flex;
+    width: 130px;
+    font-size: 15px;
+    margin-left: 10px;
+
+    & span{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    & a{
+        text-decoration: none;
+        color: blue;
+    }
+}
+
+.login{
+    margin: 0 auto;
+
+    & .login-frame{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin-left: 40%;
+        margin-top: 20%;
+
+        & input{
+            padding: 5px;
+        }
+
+        & button{
+            border: 1px solid $primary_color;
+            padding: 5px;
+            background-color: #fff;
+            margin-top: 5px;
+            font-size: 15px;
+            font-weight: 700;
+
+            &:hover{
+                border: 3px solid $secondary_color;
+            }
+        }
+
+        & #registration{
+            display: none;
+        }
+    }
+}
