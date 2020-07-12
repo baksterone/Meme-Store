@@ -13,6 +13,9 @@ class CreateProduct{
         if('id' in card){
             element.id = card.id;
         };
+        if('filter' in card){
+            element.filter = card.filter;
+        }
         return element;
     };
 }

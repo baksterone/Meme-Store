@@ -1,5 +1,5 @@
 class Cart{
-    constructor(containerCart, containerCounter,catalogAllProducts){
+    constructor(containerCart, containerCounter, catalogAllProducts){
         this.containerCart = document.querySelector(containerCart);
         this.containerCounter = document.querySelector(containerCounter);
         this.catalogAllProducts = catalogAllProducts;
@@ -10,7 +10,8 @@ class Cart{
         this.containerCounter.addEventListener('click', function(){
             cart.containerCart.style.display = 'block';
             let productsCart = cart.getProductCart();
-            let wrapper = document.createElement('slot');
+            let totalPrice = cart.getTotalPrice(productsCart);
+            let wrapper = document.createElement('div');
             wrapper.className = 'wrapper-cart';
             
 
@@ -46,6 +47,12 @@ class Cart{
                 contentText: 'X'
             });
 
+            let total = createProduct.getProductItem({
+                nameTag: 'p',
+                nameClass: 'total',
+                contentText: `Total = ${totalPrice}$`
+            })
+
             close.addEventListener('click', function(){
                 cart.containerCart.style.display = 'none';
                 cart.containerCart.innerHTML = '';
@@ -54,13 +61,7 @@ class Cart{
 
             cart.containerCart.appendChild(wrapper);
             cart.containerCart.appendChild(close);
-
-            // if(cart.containerCart.contains(wrapper && close)){    // ????
-            //     console.log('aa');
-            // } else{
-            //     cart.containerCart.appendChild(wrapper);
-            //     cart.containerCart.appendChild(close);
-            // }
+            cart.containerCart.appendChild(total);
         });
     };
 
@@ -70,12 +71,24 @@ class Cart{
 
         for(let i = 0; i < this.catalogAllProducts.length; i++){
             if(products.indexOf(this.catalogAllProducts[i].id) !== -1){         //фильтр???
-                productsInCart.push(this.catalogAllProducts[i]);
+                productsInCart.push(this.catalogAllProducts[i]);    
             }
         }
 
         return productsInCart;
     };
+
+    getTotalPrice(arr){
+        
+        let total = 0;
+
+        for(let i = 0; i < arr.length; i++){
+            total += arr[i].price;
+        }
+
+        return total;
+    }
+
 }
 
 let cart = new Cart('.container-cart', '.container-counter', catalogProducts);

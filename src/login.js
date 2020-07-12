@@ -1,12 +1,15 @@
-let signIn = document.querySelector('#signIn');
+let signIn = document.querySelector('#signIn'),
+    nameInput = document.querySelector('#name').value,
+    passInput = document.querySelector('#password').value,
+    lastLogin = localStorage.getItem('lastLogin');
     
-    
+    let getAcc,
+    accObj = {};
 
 signIn.addEventListener('click', () => {
     let login = document.querySelector('#name').value,
         pass = document.querySelector('#password').value;
-    let getAcc,
-        accObj = {};
+
 
       if (localStorage.getItem("accounts") !== null) {
         getAcc = localStorage.getItem("accounts");
@@ -21,9 +24,9 @@ signIn.addEventListener('click', () => {
         localStorage.setItem('lastLogin', login)
           alert('ok');
           document.location.href = './catalog.html';
-      }
-      
-console.log(localStorage.getItem('lastLogin'));
-
-        
+      }     
 });
+
+// if(lastLogin == nameInput){
+//   document.location.href = './account.html';
+// }

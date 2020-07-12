@@ -1,7 +1,7 @@
-// let item = document.querySelectorAll('.item .img');
+let item = document.querySelectorAll('.item .img');
 
-// item.forEach(item => {
-//     item.addEventListener('click', () => {
-//         location.href = './itemPage.html';
-//     });
-// });
+item.forEach(item => {
+    item.addEventListener('click', () => {
+        location.href = './itemPage.html';
+    });
+});

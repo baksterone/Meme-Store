@@ -1,4 +1,6 @@
 .account-content{
+    max-width: 1100px;
+    margin: 0 auto;
     height: 100vh;
 }
 
@@ -28,6 +30,14 @@
                 padding: 10px;
             }
 
+        }
+    }
+
+    .change-block{
+        display: none;
+
+        input{
+            padding: 5px;
         }
     }
 

@@ -22,13 +22,21 @@
                         <div><a href="./account.html">My account</a></div>
                         <div><a href="./contacts.html">Contacts</a></div>
                         <div><a href="./faq.html">FAQ</a></div>
-                        <div><a href="#">Cart</a></div>
+                        <div>Cart</div>
                         <div class="container-counter"></div>
-                        <div class="container-cart"></div>
                     </nav>
+                    <div class="burger" id="burger">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                    <div class="container-cart"></div> 
                     <div class="search">
-                        <input type="text" placeholder="Quick search">
+                        <input id="searchInput" type="text" placeholder="Quick search">
                         <i class="fas fa-search"></i>
+                        <!-- <div class="searchBlock">
+                            
+                        </div> -->
                     </div>
                 </div>
             </header>
@@ -38,10 +46,8 @@
                 <p>Catalog</p>
             </div>
             <div class="filter">
-                <input type="checkbox" name="Dog" id="dog">
-                <label for="Dog">Dog</label>
-                <input type="checkbox" name="Pepe" id="pepe">
-                <label for="Pepe">Pepe</label>
+                <button id="dog">Dog Meme</button>
+                <button id="pepe">Pepe Meme</button>
             </div>
             <div class="container-products">
             
@@ -54,5 +60,7 @@
     <script src="./src/store.js"></script>
     <script src="./src/catalog.js"></script>
     <script src="./src/cart.js"></script>
+    <script src="./src/filter.js"></script>
+    <script src="./src/burger.js"></script>
 </body>
 </html>

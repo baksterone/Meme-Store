@@ -6,16 +6,11 @@ class AllProducts{
         this.createProducts();
     }
 
-    // <div class="item">
-    //         <div class="name">Product1</div>
-    //         <div class="img"></div>
-    //         <div class="price">99.99</div>
-    //         <button class="btn">Add cart</button>
-    // </div>
-
     createProducts(){
         let wrapper = document.createElement('slot');
         let products = store.getProducts();
+
+
 
         for(let i = 0; i < this.catalogAllProducts.length; i++){
             let index = products.indexOf(this.catalogAllProducts[i].id);
@@ -30,7 +25,8 @@ class AllProducts{
 
             let item = createProduct.getProductItem({
                 nameTag: 'div',
-                nameClass: 'item'
+                nameClass: 'item',
+                filter: this.catalogAllProducts[i].filter
             });
             let name = createProduct.getProductItem({
                 nameTag: 'div',
@@ -39,6 +35,7 @@ class AllProducts{
             });
             let bgImg = createProduct.getProductItem({
                 nameTag: 'div',
+                id: this.catalogAllProducts[i].id + 'img',
                 nameClass: 'img',
                 backgroundImg: `url('${this.catalogAllProducts[i].image}')`
             });
@@ -53,38 +50,16 @@ class AllProducts{
                 contentText: activeText,
                 id: this.catalogAllProducts[i].id
             });
+    
 
-            let close = createProduct.getProductItem({
-                nameTag: 'div',
-                nameClass: 'closeItem',
-                contentText: 'X'
-            });
+            // bgImg.addEventListener('click', function(e){
+            //     let id = this.getAttribute('id');
+            //     let result = store.putProduct(id);
+            //     console.log(e.target.result)
 
-            
-            close.addEventListener('click', function(){
-                let item = document.querySelectorAll('.item');
-                let x = document.querySelectorAll('.closeItem');
-                let filter = document.querySelector('.filter').style.display = 'block';
-                x.forEach(x => {
-                    x.style.display = 'none';
-                });
-                item.forEach(item => {
-                    item.style.display = 'block';
-                })
-            });
+                
+            // })
 
-            bgImg.addEventListener('click', function(e){
-                let filter = document.querySelector('.filter').style.display = 'none';
-                let x = document.querySelectorAll('.closeItem');
-                x.forEach(x => {
-                    x.style.display = 'block';
-                });
-                let item = document.querySelectorAll('.item');
-                item.forEach(item => {
-                    item.style.display = 'none';
-                })
-                e.target.parentNode.style.display = 'block';
-            })
 
             btn.addEventListener('click', function(){
                 let id = this.getAttribute('id');
@@ -103,11 +78,11 @@ class AllProducts{
             item.appendChild(bgImg);
             item.appendChild(price);
             item.appendChild(btn);
-            item.appendChild(close);
             wrapper.appendChild(item);
             
         }
         this.containerProducts.appendChild(wrapper);
+
     };
 }
 
