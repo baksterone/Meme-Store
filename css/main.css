@@ -93,6 +93,13 @@ header .info-block .search .searchBlock, footer .info-block .search .searchBlock
   width: 100px;
   height: 100px;
   background-color: #fff;
+  color: #000;
+  position: absolute;
+  top: 73px;
+  display: none;
+}
+header .info-block .search .searchBlock .searchImg img, footer .info-block .search .searchBlock .searchImg img {
+  width: 50px;
 }
 
 .main-page {

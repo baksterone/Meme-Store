@@ -70,7 +70,7 @@ class Cart{
         let productsInCart = [];
 
         for(let i = 0; i < this.catalogAllProducts.length; i++){
-            if(products.indexOf(this.catalogAllProducts[i].id) !== -1){         //фильтр???
+            if(products.indexOf(this.catalogAllProducts[i].id) !== -1){
                 productsInCart.push(this.catalogAllProducts[i]);    
             }
         }
