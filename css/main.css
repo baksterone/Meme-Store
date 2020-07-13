@@ -385,6 +385,28 @@ header .info-block .search .searchBlock, footer .info-block .search .searchBlock
   border: 3px solid yellow;
 }
 
+.item-page {
+  display: none;
+  position: absolute;
+  top: 20%;
+  width: 500px;
+  height: 250px;
+  background: violet;
+  right: 20%;
+}
+.item-page .item-content {
+  display: flex;
+}
+.item-page .item-content .item-info {
+  margin-left: 20px;
+}
+.item-page .item-content .item-info ul {
+  list-style: none;
+}
+.item-page .item-content .item-img img {
+  width: 200px;
+}
+
 .info .phone {
   display: flex;
   justify-content: center;

@@ -50,16 +50,6 @@ class AllProducts{
                 contentText: activeText,
                 id: this.catalogAllProducts[i].id
             });
-    
-
-            // bgImg.addEventListener('click', function(e){
-            //     let id = this.getAttribute('id');
-            //     let result = store.putProduct(id);
-            //     console.log(e.target.result)
-
-                
-            // })
-
 
             btn.addEventListener('click', function(){
                 let id = this.getAttribute('id');
