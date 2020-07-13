@@ -1,19 +1,40 @@
-// let filterDog = document.querySelector('#dog'),
-//     filterPepe = document.querySelector('#pepe'),
-//     itemName = document.querySelectorAll('.item .name'),
-//     checkFilter = document.querySelectorAll('.item');
+let filterDog = document.querySelector('#dog'),
+    filterPepe = document.querySelector('#pepe'),
+    filterAll = document.querySelector('#all'),
+    checkFilter = document.querySelectorAll('.item');
 
 
 
-//     filterPepe.addEventListener('click', function(){
-//         for(let i = 0; i < catalogProducts.length; i++){
-//             let filterArr = checkFilter.indexOf(catalogProducts[i].filter);
+filterPepe.addEventListener('click', function(){
+    for(let i of checkFilter){
+        catalogProducts.forEach(item => {
+            if(i.filter === 'pepe'){
+                i.style.display = 'block';
+            } else {
+                i.style.display = 'none';
+            }
+        })
+    }
+})
 
-//             if(filter == 'pepe'){
-//                 console.log('a')
-//             }
-//         }
-//     })
+filterDog.addEventListener('click', function(){
+    for(let i of checkFilter){
+        catalogProducts.forEach(item => {
+            if(i.filter === 'dog'){
+                i.style.display = 'block';
+            } else {
+                i.style.display = 'none';
+            }
+        })
+    }
+})
+
+filterAll.addEventListener('click', function(){
+    for(let i of checkFilter){
+        i.style.display = 'block';
+    }
+})
+
 
 
 
